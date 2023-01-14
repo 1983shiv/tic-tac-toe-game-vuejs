@@ -13,6 +13,7 @@ export default {
       restartGame: false,
       squareValue: Array(9).fill(null),
       status: "",
+      playCount: 1,
       lines: [
         [0, 1, 2],
         [3, 4, 5],
@@ -56,7 +57,6 @@ export default {
         return
       }
       if (this.calculateWinner()) {
-        this.squareValue = Array(9).fill(null);
         this.restartGame = true
         return
       }
@@ -76,6 +76,12 @@ export default {
     setXIsNext() {
       this.xIsNext = !(this.xIsNext);
     },
+    newGame() {
+      this.playCount = this.playCount + 1;
+      this.squareValue = Array(9).fill(null);
+      this.restartGame = false;
+      this.xIsNext = true;
+    }
   },
 
 }
@@ -85,7 +91,7 @@ export default {
   <div class="centerpage">
     <h1>Tic Tac Toe Game</h1>
     <p class="showStatus">{{ computeStatus() }}</p>
-    <button class="restartButton" v-if="restartGame">Restart Game</button>
+    <button class="restartButton" v-if="restartGame" @click="newGame">Restart Game</button>
     <div class="row">
       <Square :squareValue="squareValue[0]" @actionFill="onActionFill(0)" />
       <Square :squareValue="squareValue[1]" @actionFill="onActionFill(1)" />
@@ -102,7 +108,7 @@ export default {
       <Square :squareValue="squareValue[8]" @actionFill="onActionFill(8)" />
     </div>
   </div>
-  <div class="bottompage">Play Count : 1 | Source Code : <a
+  <div class="bottompage">Play Count : {{ playCount }} | Source Code : <a
       href="https://github.com/1983shiv/tic-tac-toe-game-vuejs">Github</a></div>
 </template>
 
