@@ -13,7 +13,7 @@ export default {
       restartGame: false,
       squareValue: Array(9).fill(null),
       status: "",
-      playCount: 1,
+      playCount: localStorage.getItem('playCount') ? parseInt(localStorage.getItem('playCount')) : 1,
       lines: [
         [0, 1, 2],
         [3, 4, 5],
@@ -57,6 +57,7 @@ export default {
         return
       }
       if (this.calculateWinner()) {
+        localStorage.setItem("playCount", this.playCount);
         this.restartGame = true
         return
       }
@@ -67,6 +68,7 @@ export default {
         this.squareValue[i] = "O"
       }
       if (this.calculateWinner()) {
+        localStorage.setItem("playCount", this.playCount);
         this.restartGame = true
         return
       }
@@ -78,6 +80,7 @@ export default {
     },
     newGame() {
       this.playCount = this.playCount + 1;
+      localStorage.setItem("playCount", this.playCount);
       this.squareValue = Array(9).fill(null);
       this.restartGame = false;
       this.xIsNext = true;
@@ -111,7 +114,6 @@ export default {
   <div class="bottompage">Play Count : {{ playCount }} | Source Code : <a
       href="https://github.com/1983shiv/tic-tac-toe-game-vuejs">Github</a></div>
 </template>
-
 
 
 <style scoped>
