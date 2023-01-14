@@ -103,7 +103,8 @@ export default {
       <Square :squareValue="squareValue[8]" @actionFill="onActionFill(8)" />
     </div>
   </div>
-  <div class="bottompage">Play Count : 1 | Source Code : Github</div>
+  <div class="bottompage">Play Count : 1 | Source Code : <a
+      href="https://github.com/1983shiv/tic-tac-toe-game-vuejs">Github</a></div>
 </template>
 
 
