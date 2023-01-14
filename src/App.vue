@@ -139,12 +139,13 @@ export default {
 
 .square {
   background-color: #fff;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
   border: 1px solid #61dafb;
   text-align: center;
   font-weight: bold;
-  line-height: 40px;
+  font-size: 32px;
+  line-height: 80px;
 }
 
 .showStatus {
