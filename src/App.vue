@@ -1,6 +1,8 @@
 <script>
 import Square from './components/square.vue'
 
+
+
 export default {
   name: "app",
   components: { Square },
@@ -50,8 +52,11 @@ export default {
       return null;
     },
     onActionFill(i) {
-      if (this.squareValue[i] || this.calculateWinner()) {
-        // this.squareValue = Array(9).fill(null);
+      if (this.squareValue[i]) {
+        return
+      }
+      if (this.calculateWinner()) {
+        this.squareValue = Array(9).fill(null);
         this.restartGame = true
         return
       }
@@ -71,12 +76,6 @@ export default {
     setXIsNext() {
       this.xIsNext = !(this.xIsNext);
     },
-    mounted() {
-      console.log("count", state.count)
-    },
-    updated() {
-      console.log("count", state.count)
-    }
   },
 
 }
@@ -86,7 +85,7 @@ export default {
   <div class="centerpage">
     <h1>Tic Tac Toe Game</h1>
     <p class="showStatus">{{ computeStatus() }}</p>
-    <button class="restartButton" v-if="!restartGame">Restart Game</button>
+    <button class="restartButton" v-if="restartGame">Restart Game</button>
     <div class="row">
       <Square :squareValue="squareValue[0]" @actionFill="onActionFill(0)" />
       <Square :squareValue="squareValue[1]" @actionFill="onActionFill(1)" />
