@@ -1,29 +1,28 @@
-# tic-tac-toe-game
+<h1 align="center">👋 Hi, I’m Shiv Srivastava</h1>
 
-This template should help get you started developing with Vue 3 in Vite.
+<h3 align="center">A Full-Stack developer from India</h3>
+<h3 align="center"><a href="https://twitter.com/const_shiv" ><img src="https://img.shields.io/twitter/follow/const_shiv.svg?style=social" /> </a></h3>
 
-## Recommended IDE Setup
+# Tic Tac To Game
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Tic tac to game developed using Vue.js, just to learn the gaming and programming logic behind this game.
 
-## Customize configuration
+### Play online
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+`https://tic-tac-toe-game-vuejs.vercel.app/`
 
-## Project Setup
+### want to install and play and add features on it.
 
-```sh
-npm install
-```
+### just follow the following command and you are good to start
 
-### Compile and Hot-Reload for Development
+clone the repository to your computer
+`git clone https://github.com/1983shiv/tic-tac-toe-game-vuejs`
 
-```sh
-npm run dev
-```
+go to tik-tac-to directory
+`cd tic-tac-toe-game-vuejs`
 
-### Compile and Minify for Production
+install necessary dependancies
+`npm install`
 
-```sh
-npm run build
-```
+run the app
+`npm start`
